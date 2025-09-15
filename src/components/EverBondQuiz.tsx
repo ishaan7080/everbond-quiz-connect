@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { questions } from "@/data/questions";
+import { questionImages } from "@/data/questionImages";
 import QuizQuestion from "./QuizQuestion";
 import HeartLogo from "./HeartLogo";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
-import menIllustration from "@/assets/men-illustration.jpg";
-import womenIllustration from "@/assets/women-illustration.jpg";
 
 type Gender = 'men' | 'women' | null;
 
@@ -174,7 +173,7 @@ const EverBondQuiz = () => {
           isLast={currentQuestionIndex === currentQuestions.length - 1}
           questionNumber={currentQuestionIndex + 1}
           totalQuestions={currentQuestions.length}
-          illustration={currentGender === 'men' ? menIllustration : womenIllustration}
+          illustration={questionImages[currentQuestion.id]}
         />
       </div>
     </div>
